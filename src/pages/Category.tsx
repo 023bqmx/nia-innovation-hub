@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
@@ -136,7 +135,7 @@ const Category = () => {
         { id: 'veterinary-faculty', name: 'คณะสัตวแพทยศาสตร์', icon: <Briefcase size={16} /> },
         { id: 'nursing-faculty', name: 'คณะพยาบาลศาสตร์', icon: <Briefcase size={16} /> },
         { id: 'pharmacy-faculty', name: 'คณะเภสัชศาสตร์', icon: <Briefcase size={16} /> },
-        { id: 'allied-health-faculty', name: 'คณะสहเวชศาสตร์/เทคนิคการแพทย์/กายภาพบำบัด/รังสีเทคนิค', icon: <Briefcase size={16} /> },
+        { id: 'allied-health-faculty', name: 'คณะสหเวชศาสตร์/เทคนิคการแพทย์/กายภาพบำบัด/รังสีเทคนิค', icon: <Briefcase size={16} /> },
         { id: 'public-health-faculty', name: 'คณะสาธารณสุขศาสตร์', icon: <Briefcase size={16} /> }
       ]
     },
@@ -205,22 +204,22 @@ const Category = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-black text-white">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50">
       {/* Navigation */}
-      <nav className="flex justify-between items-center p-6 border-b border-white/20">
-        <div className="text-2xl font-bold">
-          <span className="text-blue-400">NIA</span> Platform
+      <nav className="flex justify-between items-center p-6 bg-white/80 backdrop-blur-sm border-b border-gray-200">
+        <div className="text-2xl font-bold text-gray-800">
+          <span className="text-blue-600">NIA</span> Platform
         </div>
         <div className="flex space-x-6">
           <button 
             onClick={() => navigate('/')}
-            className="text-white hover:text-blue-400 transition-colors font-medium flex items-center gap-2"
+            className="text-gray-700 hover:text-blue-600 transition-colors font-medium flex items-center gap-2"
           >
             <Home size={20} />
             HOME
           </button>
           <button 
-            className="text-blue-400 font-medium"
+            className="text-blue-600 font-medium"
           >
             CATEGORY
           </button>
@@ -228,15 +227,15 @@ const Category = () => {
       </nav>
 
       <div className="container mx-auto px-6 py-8">
-        <h1 className="text-4xl font-bold text-center mb-12">
-          หมวดหมู่ <span className="text-blue-400">กิจกรรม</span>
+        <h1 className="text-4xl font-bold text-center mb-12 text-gray-800">
+          หมวดหมู่ <span className="text-blue-600">กิจกรรม</span>
         </h1>
 
         <div className="grid gap-8">
           {/* Type Selection */}
-          <Card className="bg-white/10 backdrop-blur-sm border-white/20 p-6">
-            <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
-              <Trophy className="text-yellow-400" />
+          <Card className="bg-white/90 backdrop-blur-sm border-gray-200 p-6 shadow-lg">
+            <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2 text-gray-800">
+              <Trophy className="text-yellow-500" />
               เลือกประเภท (TYPE)
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
@@ -244,10 +243,10 @@ const Category = () => {
                 <Button
                   key={type.id}
                   variant={selectedType === type.id ? "default" : "outline"}
-                  className={`p-4 h-auto flex flex-col items-center gap-2 ${
+                  className={`p-4 h-auto flex flex-col items-center gap-2 transition-all ${
                     selectedType === type.id 
-                      ? "bg-blue-600 hover:bg-blue-700" 
-                      : "border-white/30 text-white hover:bg-white/20"
+                      ? "bg-blue-600 hover:bg-blue-700 text-white shadow-lg" 
+                      : "border-gray-300 text-gray-700 hover:bg-blue-50 hover:border-blue-300 bg-white"
                   }`}
                   onClick={() => setSelectedType(type.id)}
                 >
@@ -259,9 +258,9 @@ const Category = () => {
           </Card>
 
           {/* Age Range Selection */}
-          <Card className="bg-white/10 backdrop-blur-sm border-white/20 p-6">
-            <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
-              <Users className="text-green-400" />
+          <Card className="bg-white/90 backdrop-blur-sm border-gray-200 p-6 shadow-lg">
+            <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2 text-gray-800">
+              <Users className="text-green-500" />
               เลือกช่วงอายุ (Age Range)
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -269,10 +268,10 @@ const Category = () => {
                 <Button
                   key={age.id}
                   variant={selectedAge === age.id ? "default" : "outline"}
-                  className={`p-4 h-auto flex flex-col items-center gap-2 ${
+                  className={`p-4 h-auto flex flex-col items-center gap-2 transition-all ${
                     selectedAge === age.id 
-                      ? "bg-green-600 hover:bg-green-700" 
-                      : "border-white/30 text-white hover:bg-white/20"
+                      ? "bg-green-600 hover:bg-green-700 text-white shadow-lg" 
+                      : "border-gray-300 text-gray-700 hover:bg-green-50 hover:border-green-300 bg-white"
                   }`}
                   onClick={() => setSelectedAge(age.id)}
                 >
@@ -284,22 +283,22 @@ const Category = () => {
           </Card>
 
           {/* Classification Selection */}
-          <Card className="bg-white/10 backdrop-blur-sm border-white/20 p-6">
-            <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
-              <BookOpen className="text-purple-400" />
+          <Card className="bg-white/90 backdrop-blur-sm border-gray-200 p-6 shadow-lg">
+            <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2 text-gray-800">
+              <BookOpen className="text-purple-500" />
               เลือกหมวดหมู่ (Classification)
             </h2>
             
             <div className="grid md:grid-cols-2 gap-8">
               {/* Work Fields */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-blue-400">1. ตามสายงาน</h3>
+                <h3 className="text-xl font-semibold mb-4 text-blue-600">1. ตามสายงาน</h3>
                 <div className="space-y-3">
                   {workFieldsData.map((category) => (
                     <div key={category.id}>
                       <Button
                         variant="ghost"
-                        className="w-full justify-between p-4 border border-white/20 hover:bg-white/20 text-left"
+                        className="w-full justify-between p-4 border border-gray-200 hover:bg-blue-50 hover:border-blue-300 text-left bg-white text-gray-700 transition-all"
                         onClick={() => handleCategoryClick(category.id)}
                       >
                         <div className="flex items-center gap-3">
@@ -320,7 +319,7 @@ const Category = () => {
                             <Button
                               key={sub.id}
                               variant="ghost"
-                              className="w-full justify-start p-3 text-sm hover:bg-blue-600/20 border-l-2 border-blue-400/50"
+                              className="w-full justify-start p-3 text-sm hover:bg-blue-100 border-l-2 border-blue-300 bg-blue-50/50 text-gray-700 transition-all"
                               onClick={() => handleSubCategoryClick(sub.id)}
                             >
                               <div className="flex items-center gap-2">
@@ -339,13 +338,13 @@ const Category = () => {
 
               {/* Universities */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-green-400">2. ตามมหาวิทยาลัย</h3>
+                <h3 className="text-xl font-semibold mb-4 text-green-600">2. ตามมหาวิทยาลัย</h3>
                 <div className="space-y-3">
                   {universityData.map((category) => (
                     <div key={category.id}>
                       <Button
                         variant="ghost"
-                        className="w-full justify-between p-4 border border-white/20 hover:bg-white/20 text-left"
+                        className="w-full justify-between p-4 border border-gray-200 hover:bg-green-50 hover:border-green-300 text-left bg-white text-gray-700 transition-all"
                         onClick={() => handleCategoryClick(`uni-${category.id}`)}
                       >
                         <div className="flex items-center gap-3">
@@ -366,7 +365,7 @@ const Category = () => {
                             <Button
                               key={sub.id}
                               variant="ghost"
-                              className="w-full justify-start p-3 text-sm hover:bg-green-600/20 border-l-2 border-green-400/50"
+                              className="w-full justify-start p-3 text-sm hover:bg-green-100 border-l-2 border-green-300 bg-green-50/50 text-gray-700 transition-all"
                               onClick={() => handleSubCategoryClick(sub.id)}
                             >
                               <div className="flex items-center gap-2">
@@ -387,21 +386,21 @@ const Category = () => {
 
           {/* Selected Filters Summary */}
           {(selectedType || selectedAge || selectedClassification) && (
-            <Card className="bg-blue-600/20 backdrop-blur-sm border-blue-400/30 p-6">
-              <h3 className="text-xl font-semibold mb-4">ตัวกรองที่เลือก</h3>
+            <Card className="bg-blue-50/80 backdrop-blur-sm border-blue-200 p-6 shadow-lg">
+              <h3 className="text-xl font-semibold mb-4 text-gray-800">ตัวกรองที่เลือก</h3>
               <div className="flex flex-wrap gap-2">
                 {selectedType && (
-                  <Badge className="bg-blue-600 text-white">
+                  <Badge className="bg-blue-600 text-white hover:bg-blue-700">
                     ประเภท: {types.find(t => t.id === selectedType)?.name}
                   </Badge>
                 )}
                 {selectedAge && (
-                  <Badge className="bg-green-600 text-white">
+                  <Badge className="bg-green-600 text-white hover:bg-green-700">
                     อายุ: {ageRanges.find(a => a.id === selectedAge)?.name}
                   </Badge>
                 )}
                 {selectedClassification && (
-                  <Badge className="bg-purple-600 text-white">
+                  <Badge className="bg-purple-600 text-white hover:bg-purple-700">
                     หมวดหมู่: {selectedClassification}
                   </Badge>
                 )}
