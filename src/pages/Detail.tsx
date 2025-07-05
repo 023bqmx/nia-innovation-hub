@@ -50,16 +50,16 @@ const Detail = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-black text-white">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 text-gray-800">
       {/* Navigation */}
-      <nav className="flex justify-between items-center p-6 border-b border-white/20">
-        <div className="text-2xl font-bold">
-          <span className="text-blue-400">NIA</span> Platform
+      <nav className="flex justify-between items-center p-6 border-b border-gray-200 bg-white/80 backdrop-blur-sm">
+        <div className="text-2xl font-bold text-gray-800">
+          <span className="text-blue-600">NIA</span> Platform
         </div>
         <Button
           variant="ghost"
           onClick={() => navigate('/category')}
-          className="text-white hover:text-blue-400 transition-colors"
+          className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors"
         >
           <ArrowLeft className="mr-2" size={20} />
           กลับไปหมวดหมู่
@@ -70,48 +70,48 @@ const Detail = () => {
         {/* Header */}
         <div className="mb-8">
           <div className="flex flex-wrap gap-2 mb-4">
-            <Badge className="bg-blue-600">{mockData.type}</Badge>
-            <Badge className="bg-purple-600">{mockData.category}</Badge>
+            <Badge className="bg-blue-100 text-blue-800 border-blue-200">{mockData.type}</Badge>
+            <Badge className="bg-purple-100 text-purple-800 border-purple-200">{mockData.category}</Badge>
           </div>
-          <h1 className="text-4xl font-bold mb-4">{mockData.title}</h1>
-          <p className="text-xl text-gray-300">{mockData.description}</p>
+          <h1 className="text-4xl font-bold mb-4 text-gray-800">{mockData.title}</h1>
+          <p className="text-xl text-gray-600">{mockData.description}</p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-6">
             {/* Registration Period */}
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20 p-6">
-              <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
-                <Calendar className="text-blue-400" />
+            <Card className="bg-white/90 backdrop-blur-sm border-gray-200 p-6 shadow-lg">
+              <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2 text-gray-800">
+                <Calendar className="text-blue-500" />
                 เวลาที่รับสมัคร
               </h2>
-              <p className="text-lg">{mockData.registrationPeriod}</p>
+              <p className="text-lg text-gray-700">{mockData.registrationPeriod}</p>
             </Card>
 
             {/* Activity Period */}
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20 p-6">
-              <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
-                <Clock className="text-green-400" />
+            <Card className="bg-white/90 backdrop-blur-sm border-gray-200 p-6 shadow-lg">
+              <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2 text-gray-800">
+                <Clock className="text-green-500" />
                 ระยะเวลาเข้าร่วม
               </h2>
-              <p className="text-lg">{mockData.activityPeriod}</p>
-              <div className="mt-4 flex items-center gap-2 text-gray-300">
+              <p className="text-lg text-gray-700">{mockData.activityPeriod}</p>
+              <div className="mt-4 flex items-center gap-2 text-gray-600">
                 <MapPin size={16} />
                 <span>{mockData.location}</span>
               </div>
             </Card>
 
             {/* Activity Details */}
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20 p-6">
-              <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
-                <FileText className="text-yellow-400" />
+            <Card className="bg-white/90 backdrop-blur-sm border-gray-200 p-6 shadow-lg">
+              <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2 text-gray-800">
+                <FileText className="text-yellow-500" />
                 รายละเอียดกิจกรรม
               </h2>
               <div className="space-y-4">
                 <div>
-                  <h3 className="text-lg font-semibold mb-2">หลักสูตรการอบรม</h3>
-                  <ul className="list-disc list-inside space-y-1 text-gray-300">
+                  <h3 className="text-lg font-semibold mb-2 text-gray-800">หลักสูตรการอบรม</h3>
+                  <ul className="list-disc list-inside space-y-1 text-gray-600">
                     <li>พื้นฐาน Machine Learning และ Deep Learning</li>
                     <li>การพัฒนาแอปพลิเคชัน AI สำหรับธุรกิจ</li>
                     <li>การใช้งาน Python และ TensorFlow</li>
@@ -121,8 +121,8 @@ const Detail = () => {
                 </div>
                 
                 <div>
-                  <h3 className="text-lg font-semibold mb-2">คุณสมบัติผู้สมัคร</h3>
-                  <ul className="list-disc list-inside space-y-1 text-gray-300">
+                  <h3 className="text-lg font-semibold mb-2 text-gray-800">คุณสมบัติผู้สมัคร</h3>
+                  <ul className="list-disc list-inside space-y-1 text-gray-600">
                     {mockData.requirements.map((req, index) => (
                       <li key={index}>{req}</li>
                     ))}
@@ -132,16 +132,16 @@ const Detail = () => {
             </Card>
 
             {/* Benefits */}
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20 p-6">
-              <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
-                <Award className="text-purple-400" />
+            <Card className="bg-white/90 backdrop-blur-sm border-gray-200 p-6 shadow-lg">
+              <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2 text-gray-800">
+                <Award className="text-purple-500" />
                 ผลที่จะได้รับ
               </h2>
               <div className="grid md:grid-cols-2 gap-4">
                 {mockData.benefits.map((benefit, index) => (
-                  <div key={index} className="flex items-center gap-3 p-3 bg-white/5 rounded-lg">
-                    <Award className="text-yellow-400 flex-shrink-0" size={20} />
-                    <span>{benefit}</span>
+                  <div key={index} className="flex items-center gap-3 p-3 bg-blue-50 rounded-lg border border-blue-100">
+                    <Award className="text-yellow-500 flex-shrink-0" size={20} />
+                    <span className="text-gray-700">{benefit}</span>
                   </div>
                 ))}
               </div>
@@ -151,52 +151,52 @@ const Detail = () => {
           {/* Sidebar */}
           <div className="space-y-6">
             {/* Quick Info */}
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20 p-6">
-              <h3 className="text-xl font-semibold mb-4">ข้อมูลสรุป</h3>
+            <Card className="bg-white/90 backdrop-blur-sm border-gray-200 p-6 shadow-lg">
+              <h3 className="text-xl font-semibold mb-4 text-gray-800">ข้อมูลสรุป</h3>
               <div className="space-y-3">
                 <div className="flex items-center gap-2">
-                  <Users className="text-blue-400" size={16} />
-                  <span className="text-sm">เปิดรับ 50 คน</span>
+                  <Users className="text-blue-500" size={16} />
+                  <span className="text-sm text-gray-700">เปิดรับ 50 คน</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Calendar className="text-green-400" size={16} />
-                  <span className="text-sm">6 วัน</span>
+                  <Calendar className="text-green-500" size={16} />
+                  <span className="text-sm text-gray-700">6 วัน</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Award className="text-yellow-400" size={16} />
-                  <span className="text-sm">มีใบประกาศ</span>
+                  <Award className="text-yellow-500" size={16} />
+                  <span className="text-sm text-gray-700">มีใบประกาศ</span>
                 </div>
               </div>
             </Card>
 
             {/* Contact */}
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20 p-6">
-              <h3 className="text-xl font-semibold mb-4">ติดต่อสอบถาม</h3>
+            <Card className="bg-white/90 backdrop-blur-sm border-gray-200 p-6 shadow-lg">
+              <h3 className="text-xl font-semibold mb-4 text-gray-800">ติดต่อสอบถาม</h3>
               <div className="space-y-3">
                 <div className="flex items-center gap-2">
-                  <Phone className="text-blue-400" size={16} />
-                  <span className="text-sm">{mockData.contact.phone}</span>
+                  <Phone className="text-blue-500" size={16} />
+                  <span className="text-sm text-gray-700">{mockData.contact.phone}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Mail className="text-green-400" size={16} />
-                  <span className="text-sm">{mockData.contact.email}</span>
+                  <Mail className="text-green-500" size={16} />
+                  <span className="text-sm text-gray-700">{mockData.contact.email}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Globe className="text-purple-400" size={16} />
-                  <span className="text-sm">{mockData.contact.website}</span>
+                  <Globe className="text-purple-500" size={16} />
+                  <span className="text-sm text-gray-700">{mockData.contact.website}</span>
                 </div>
               </div>
             </Card>
 
             {/* Action Buttons */}
             <div className="space-y-3">
-              <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3">
+              <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 shadow-lg">
                 สมัครเข้าร่วม
               </Button>
-              <Button variant="outline" className="w-full border-white/30 text-white hover:bg-white/20 py-3">
+              <Button variant="outline" className="w-full border-blue-600 text-blue-600 hover:bg-blue-50 py-3 shadow-lg">
                 บันทึกไว้ดูภายหลัง
               </Button>
-              <Button variant="outline" className="w-full border-white/30 text-white hover:bg-white/20 py-3">
+              <Button variant="outline" className="w-full border-purple-600 text-purple-600 hover:bg-purple-50 py-3 shadow-lg">
                 แชร์กิจกรรม
               </Button>
             </div>
